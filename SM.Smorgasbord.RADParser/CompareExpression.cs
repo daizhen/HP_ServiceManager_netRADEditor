@@ -12,7 +12,6 @@ namespace SM.Smorgasbord.RADParser
         //Should be CompareRightExpression
        private BaseExpression right;
 
-
        public InExpression Left
        {
            get
