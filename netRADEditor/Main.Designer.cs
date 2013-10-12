@@ -247,7 +247,7 @@
             // toolStripMenuItemFont
             // 
             this.toolStripMenuItemFont.Name = "toolStripMenuItemFont";
-            this.toolStripMenuItemFont.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItemFont.Size = new System.Drawing.Size(124, 22);
             this.toolStripMenuItemFont.Text = "Font";
             this.toolStripMenuItemFont.Click += new System.EventHandler(this.toolStripMenuItemFont_Click);
             // 
@@ -256,7 +256,7 @@
             this.wrapLineToolStripMenuItem.Checked = true;
             this.wrapLineToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.wrapLineToolStripMenuItem.Name = "wrapLineToolStripMenuItem";
-            this.wrapLineToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.wrapLineToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.wrapLineToolStripMenuItem.Text = "Wrap line";
             this.wrapLineToolStripMenuItem.Click += new System.EventHandler(this.wrapLineToolStripMenuItem_Click);
             // 

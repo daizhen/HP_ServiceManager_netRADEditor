@@ -21,7 +21,7 @@ namespace netRADEditor
         private const int SCE_C_CHARACTER = 7;
 
         private Dictionary<string, EditorContext> Contexts = new Dictionary<string, EditorContext>();
-        
+
         public Main()
         {
             InitializeComponent();
@@ -43,6 +43,17 @@ namespace netRADEditor
             }
         }
 
+        private EditorContext CurrentContext
+        {
+            get
+            {
+                TabPage currentTabPage = tabControlMain.SelectedTab;
+                string currentTabKey = currentTabPage.Name;
+                //Get current context;
+                EditorContext context = Contexts[currentTabKey];
+                return context;
+            }
+        }
         private Scintilla AddScintilla(Control parent)
         {
             Scintilla textBox = new Scintilla();
@@ -50,7 +61,7 @@ namespace netRADEditor
             SetCodeViewerStyle(textBox);
 
             //Set margine to show line number.
-            textBox.Margins[0].Width = 20;
+            textBox.Margins[0].Width = 50;
             textBox.Dock = DockStyle.Fill;
             textBox.AllowDrop = true;
             parent.Controls.Add(textBox);
@@ -95,7 +106,7 @@ namespace netRADEditor
             viewer.NativeInterface.StyleSetFore(SCE_C_CHARACTER, 0x00008000); //char
             viewer.NativeInterface.StyleSetFore(SCE_C_COMMENT, 0x00008000); //Comments
             viewer.NativeInterface.StyleSetFore(SCE_C_COMMENTLINE, 0x00008000); //Comments
-          
+
             MenuItem itemFormat = new MenuItem("Format");
             itemFormat.Click += new EventHandler(viewer_FormatCodeClick);
 
@@ -105,6 +116,9 @@ namespace netRADEditor
             viewer.ContextMenu = new ContextMenu();
             viewer.ContextMenu.MenuItems.Add(itemFormat);
             viewer.ContextMenu.MenuItems.Add(itemSerialize);
+
+            viewer.KeyDown += new KeyEventHandler(Scintilla_KeyDown);
+
         }
 
         private void FormatCode(Scintilla scintilla)
@@ -211,39 +225,17 @@ namespace netRADEditor
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Get current tab page.
-            TabPage currentTabPage = tabControlMain.SelectedTab;
-            string currentTabKey = currentTabPage.Name;
-            //Get current context;
-            EditorContext context = Contexts[currentTabKey];
-            if (!string.IsNullOrEmpty(context.FileName))
-            {
-                SaveFile(context.FileName, context.Editor.Text);
-            }
-            else
-            {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                DialogResult result = saveFileDialog.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    SaveFile(saveFileDialog.FileName, context.Editor.Text);
-                    tabControlMain.SelectedTab.Text = saveFileDialog.FileName;
-                }
-            }
+            SaveCurrentEditor();
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {            
-            //Get current tab page.
-            TabPage currentTabPage = tabControlMain.SelectedTab;
-            string currentTabKey = currentTabPage.Name;
-            //Get current context;
-            EditorContext context = Contexts[currentTabKey];
+        {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             DialogResult result = saveFileDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                SaveFile(saveFileDialog.FileName, context.Editor.Text);
+                SaveFile(saveFileDialog.FileName, CurrentEditor.Text);
+                CurrentContext.FileName = saveFileDialog.FileName;
                 tabControlMain.SelectedTab.Text = saveFileDialog.FileName;
             }
         }
@@ -279,13 +271,32 @@ namespace netRADEditor
         /// </summary>
         /// <param name="fileName"></param>
         /// <param name="content"></param>
-        private void SaveFile(string fileName,string content)
+        private void SaveFile(string fileName, string content)
         {
             FileStream stream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
             StreamWriter writer = new StreamWriter(stream);
             writer.Write(content);
             writer.Close();
             stream.Dispose();
+        }
+
+        private void SaveCurrentEditor()
+        {
+            if (!string.IsNullOrEmpty(CurrentContext.FileName))
+            {
+                SaveFile(CurrentContext.FileName, CurrentContext.Editor.Text);
+            }
+            else
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                DialogResult result = saveFileDialog.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    SaveFile(saveFileDialog.FileName, CurrentEditor.Text);
+                    tabControlMain.SelectedTab.Text = saveFileDialog.FileName;
+                    CurrentContext.FileName = saveFileDialog.FileName;
+                }
+            }
         }
 
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -368,6 +379,46 @@ namespace netRADEditor
                 foreach (KeyValuePair<string, EditorContext> kvPair in Contexts)
                 {
                     ScintillaUtil.SetLineWrapping(kvPair.Value.Editor);
+                }
+            }
+        }
+
+        private void Scintilla_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Control key is down
+            if (e.Control)
+            {
+                if (e.KeyCode == Keys.M)
+                {
+                    CurrentContext.PreChar = 'm';
+
+                    e.Handled = true;
+                }
+                else if (e.KeyCode == Keys.P)
+                {
+                    if (CurrentContext.PreChar == 'm')
+                    {
+                        FormatCode(CurrentEditor);
+
+                        e.Handled = true;
+                    }
+                }
+                else if (e.KeyCode == Keys.O)
+                {
+                    if (CurrentContext.PreChar == 'm')
+                    {
+                        SerializeCode(CurrentEditor);
+
+                        e.Handled = true;
+                    }
+                }
+                else if (e.KeyCode == Keys.S)
+                {
+                    SaveCurrentEditor();
+                }
+                else
+                {
+                    //Nothing to do.
                 }
             }
         }

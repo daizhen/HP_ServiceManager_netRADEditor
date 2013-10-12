@@ -28,5 +28,17 @@ namespace netRADEditor
             get;
             set;
         }
+
+        public bool ControlKeyKicked
+        {
+            get;
+            set;
+        }
+
+        public char PreChar
+        {
+            get;
+            set;
+        }
     }
 }
