@@ -4,3 +4,9 @@ C:\Users\daizhen\Documents\Visual Studio 2008\Projects\SM.Smorgasbord\SM.Smorgas
 C:\Users\daizhen\Documents\Visual Studio 2008\Projects\SM.Smorgasbord\SM.Smorgasbord.RADParser\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\daizhen\Documents\Visual Studio 2008\Projects\SM.Smorgasbord\SM.Smorgasbord.RADParser\obj\Debug\SM.Smorgasbord.RADParser.dll
 C:\Users\daizhen\Documents\Visual Studio 2008\Projects\SM.Smorgasbord\SM.Smorgasbord.RADParser\obj\Debug\SM.Smorgasbord.RADParser.pdb
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\SM.Smorgasbord.RADParser\bin\Debug\StandaloneFunctions.txt
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\SM.Smorgasbord.RADParser\bin\Debug\SM.Smorgasbord.RADParser.dll
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\SM.Smorgasbord.RADParser\bin\Debug\SM.Smorgasbord.RADParser.pdb
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\SM.Smorgasbord.RADParser\obj\Debug\SM.Smorgasbord.RADParser.csprojResolveAssemblyReference.cache
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\SM.Smorgasbord.RADParser\obj\Debug\SM.Smorgasbord.RADParser.dll
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\SM.Smorgasbord.RADParser\obj\Debug\SM.Smorgasbord.RADParser.pdb

@@ -153,6 +153,40 @@ namespace netRADEditor
             }
         }
 
+
+        private void AppendSemiColon(Scintilla scintilla)
+        {
+            try
+            {
+                StringBuilder result = new StringBuilder();
+
+                string[] rawLines = scintilla.Text.Split('\n');
+                foreach (string lineStr in rawLines)
+                {
+                    if (!string.IsNullOrEmpty(lineStr.Trim()))
+                    {
+                        if (lineStr.Trim().EndsWith(";"))
+                        {
+                            result.AppendLine(lineStr);
+                        }
+                        else
+                        {
+                            result.Append(lineStr).AppendLine(";");
+                        }
+                    }
+                    else
+                    {
+                        result.AppendLine();
+                    }
+                }
+                scintilla.Text = result.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         #region Events
 
         protected void viewer_FormatCodeClick(Object sender, EventArgs args)
@@ -421,6 +455,11 @@ namespace netRADEditor
                     //Nothing to do.
                 }
             }
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            AppendSemiColon(CurrentEditor);
         }
     }
 }

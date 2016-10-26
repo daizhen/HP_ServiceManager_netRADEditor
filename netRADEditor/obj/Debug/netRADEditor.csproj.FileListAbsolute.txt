@@ -19,3 +19,23 @@ C:\Users\daizhen\Documents\Visual Studio 2008\Projects\netRADEditor\netRADEditor
 C:\Users\daizhen\Documents\Visual Studio 2008\Projects\netRADEditor\netRADEditor\bin\Debug\SM.Smorgasbord.RADParser.pdb
 C:\Users\daizhen\Documents\Visual Studio 2008\Projects\netRADEditor\netRADEditor\bin\Debug\SciLexer.dll
 C:\Users\daizhen\Documents\Visual Studio 2008\Projects\netRADEditor\netRADEditor\bin\Debug\SciLexer64.dll
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\StandaloneFunctions.txt
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\ScintillaNET\License.txt
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\ScintillaNET\ReadMe.htm
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\SciLexer.dll
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\SciLexer64.dll
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\ScintillaNET\ScintillaNET.dll
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\ScintillaNET\ScintillaNET.pdb
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\ScintillaNET.xml
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\netRADEditor.exe
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\netRADEditor.pdb
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\ScintillaNET.dll
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\SM.Smorgasbord.RADParser.dll
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\SM.Smorgasbord.RADParser.pdb
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\bin\Debug\ScintillaNET.pdb
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\obj\Debug\netRADEditor.csprojResolveAssemblyReference.cache
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\obj\Debug\netRADEditor.Main.resources
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\obj\Debug\netRADEditor.Properties.Resources.resources
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\obj\Debug\netRADEditor.csproj.GenerateResource.Cache
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\obj\Debug\netRADEditor.exe
+C:\cygwin64\home\daizhen\projects\HP_ServiceManager_netRADEditor\netRADEditor\obj\Debug\netRADEditor.pdb
